@@ -35,3 +35,20 @@ if (contactForm && formSuccess) {
     formSuccess.classList.add('visible');
   }
 }
+
+/* ── ACCEPTING NEW PATIENTS STATUS ── */
+fetch('/.netlify/functions/status')
+  .then(r => r.json())
+  .then(data => {
+    if (!data.acceptingNewPatients) {
+      const banner = document.getElementById('status-banner');
+      if (banner) banner.removeAttribute('hidden');
+
+      const consultLink = document.querySelector('.free-consult-cta');
+      if (consultLink) {
+        consultLink.textContent = 'Send a message \u2192';
+        consultLink.href = 'contact.html';
+      }
+    }
+  })
+  .catch(() => { /* fail silently — default behaviour is accepting */ });
