@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Krissy Tost at The Counseling Place LLC in Corvallis, Oregon. Send a message or book online.">
+  <title>Contact — The Counseling Place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    <span class="nav-logo-text">The Counseling Place</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services &amp; Fees</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://thecounselingplacepnw.clientsecure.me" class="nav-book" target="_blank" rel="noopener">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="page-banner-bg" style="background-image: url('assets/images/hero-pnw-trees.jpg')"></div>
+  <div class="page-banner-overlay"></div>
+  <div class="page-banner-content">
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Let's start a conversation</h1>
+    <p class="banner-sub">Ready to take the first step? Send a message, call, or book directly online. Krissy will get back to you within one business day.</p>
+  </div>
+</div>
+
+<!-- CONTACT LAYOUT -->
+<div class="contact-layout">
+
+  <!-- Info Panel -->
+  <div class="contact-info-panel">
+    <div>
+      <div class="section-label">Location</div>
+      <div class="contact-item">
+        <h4>Office Address</h4>
+        <p>1461 SW A Ave<br>Corvallis, OR 97333</p>
+        <p class="sub-note">Corner of 15th St &amp; A Ave, near OSU</p>
+      </div>
+      <div class="office-photo" style="background-image: url('assets/images/office.jpg')">
+        <div class="office-photo-caption">The Counseling Place office</div>
+      </div>
+      <p style="margin-top:10px; font-family:'Inter',sans-serif; font-size:13px; color:#6b7280; line-height:1.65;">
+        Parking available on the north and east sides of the building. Enter from A Ave and greet staff in the lobby when your provider is available.
+      </p>
+    </div>
+    <div class="contact-item">
+      <h4>Phone</h4>
+      <p><a href="tel:5412500312">541-250-0312</a></p>
+      <p class="sub-note">Confidential voicemail</p>
+    </div>
+    <div class="contact-item">
+      <h4>Email</h4>
+      <p><a href="mailto:krissy@thecounselingplacepnw.com">krissy@thecounselingplacepnw.com</a></p>
+    </div>
+    <div class="contact-item">
+      <h4>Office Hours</h4>
+      <p>Monday – Thursday</p>
+      <p class="sub-note">Emails &amp; voicemails checked during business hours</p>
+    </div>
+  </div>
+
+  <!-- Form Panel -->
+  <div class="contact-form-panel">
+    <h2>Send a message</h2>
+    <p class="form-intro">Not ready to book yet? Use this form to reach out — no pressure, just a conversation starter.</p>
+
+    <form class="contact-form" name="contact" method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
+          action="/contact.html?submitted=true">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="visually-hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone <span style="font-weight:400; color:#9ca3af;">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="541-555-0100">
+      </div>
+      <div class="form-group">
+        <label for="reason">What brings you here?</label>
+        <select id="reason" name="reason" required>
+          <option value="" disabled selected>Select one…</option>
+          <option value="individual">Individual counseling</option>
+          <option value="couples">Couples counseling</option>
+          <option value="family">Family counseling</option>
+          <option value="general">General inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell Krissy a little about what you're looking for…" required></textarea>
+      </div>
+      <div class="captcha-notice">
+        🔒 Protected by reCAPTCHA &middot; Netlify Forms
+      </div>
+      <div data-netlify-recaptcha="true"></div>
+      <button type="submit" class="form-submit">Send Message &rarr;</button>
+    </form>
+
+    <div class="form-success">
+      <div class="success-icon">💚</div>
+      <h3>Message sent!</h3>
+      <p>Thank you for reaching out. Krissy will get back to you within one business day (Mon–Thu).</p>
+    </div>
+
+    <div class="book-direct-section">
+      <p>Prefer to book directly?</p>
+      <a href="https://thecounselingplacepnw.clientsecure.me" class="btn-outline-teal" target="_blank" rel="noopener">Book Online via Client Portal &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">The Counseling Place LLC</div>
+      <p>Licensed professional counseling for individuals, couples, and families in Corvallis, Oregon.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services &amp; Fees</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://thecounselingplacepnw.clientsecure.me" target="_blank" rel="noopener">Book Now &rarr;</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>1461 SW A Ave<br>Corvallis, OR 97333</p>
+      <a href="tel:5412500312">541-250-0312</a>
+      <a href="mailto:krissy@thecounselingplacepnw.com">krissy@thecounselingplacepnw.com</a>
+      <p>Mon – Thu</p>
+    </div>
+    <div class="footer-col">
+      <h4>Insurance</h4>
+      <p>OHP / Medicaid</p>
+      <p>Moda Health</p>
+      <p>PacificSource</p>
+      <p>Providence</p>
+      <p>Regence BCBS</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2024 The Counseling Place LLC &middot; Krissy Tost, LPC &middot; Oregon #C6893
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
