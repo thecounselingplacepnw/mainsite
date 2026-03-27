@@ -131,6 +131,23 @@ h1, h2, h3, h4 {
 }
 .btn-outline-teal:hover { background: var(--teal); color: white; }
 
+/* ── FOCUS VISIBLE (keyboard navigation / WCAG 2.4.7) ── */
+.btn-primary:focus-visible,
+.btn-gradient:focus-visible,
+.btn-teal:focus-visible,
+.btn-outline-teal:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+.btn-ghost:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+.form-submit:focus-visible {
+  outline: 3px solid var(--teal-dark);
+  outline-offset: 3px;
+}
+
 /* ── NAVIGATION ── */
 .site-nav {
   position: fixed;
@@ -183,12 +200,12 @@ h1, h2, h3, h4 {
 .nav-links a.active { color: var(--teal); }
 .nav-links .nav-book {
   background: var(--gradient);
-  color: white !important;
+  color: white;
   padding: 9px 22px;
   border-radius: 24px;
-  font-weight: 600 !important;
+  font-weight: 600;
   box-shadow: 0 2px 12px rgba(13,148,136,0.3);
-  transition: opacity 0.2s, transform 0.2s !important;
+  transition: opacity 0.2s, transform 0.2s;
 }
 .nav-links .nav-book:hover { opacity: 0.92; transform: translateY(-1px); }
 
@@ -340,10 +357,14 @@ h1, h2, h3, h4 {
 /* ── UTILITY ── */
 .visually-hidden {
   position: absolute;
-  width: 1px; height: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
   white-space: nowrap;
+  border: 0;
 }
 
 /* =============================================
