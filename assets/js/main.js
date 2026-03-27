@@ -37,7 +37,7 @@ if (contactForm && formSuccess) {
 }
 
 /* ── ACCEPTING NEW PATIENTS STATUS ── */
-fetch('/.netlify/functions/status')
+fetch('/api/status')
   .then(r => r.json())
   .then(data => {
     if (!data.acceptingNewPatients) {
