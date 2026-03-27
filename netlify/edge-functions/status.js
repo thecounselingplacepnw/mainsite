@@ -5,7 +5,9 @@ export default async () => {
     {
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'no-store, no-cache, must-revalidate'
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Netlify-CDN-Cache-Control': 'no-store',
+        'Surrogate-Control': 'no-store'
       }
     }
   );
