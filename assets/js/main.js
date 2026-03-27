@@ -44,11 +44,16 @@ fetch('/api/status')
       const banner = document.getElementById('status-banner');
       if (banner) banner.removeAttribute('hidden');
 
-      const consultLink = document.querySelector('.free-consult-cta');
-      if (consultLink) {
-        consultLink.textContent = 'Send a message \u2192';
-        consultLink.href = 'contact.html';
-      }
+      document.querySelectorAll('.free-consult-cta').forEach(link => {
+        link.textContent = 'Send a message \u2192';
+        link.href = 'contact.html';
+        link.removeAttribute('target');
+        link.removeAttribute('rel');
+      });
+
+      document.querySelectorAll('.new-patient-text').forEach(el => {
+        el.textContent = 'Krissy is not currently accepting new clients — contact her to ask about future availability.';
+      });
     }
   })
   .catch(() => { /* fail silently — default behaviour is accepting */ });
