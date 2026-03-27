@@ -740,6 +740,7 @@ h1, h2, h3, h4 {
   line-height: 1.8;
   margin-bottom: 16px;
 }
+.bio-text .btn-teal { margin-top: 20px; }
 
 .approach-section {
   padding: 80px;
@@ -763,20 +764,21 @@ h1, h2, h3, h4 {
   border-top-color: var(--border);
   background: var(--purple-light);
 }
-.approach-card h4 {
+.approach-card h3 {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;
 }
-.approach-card.teal h4 { color: var(--teal-dark); }
-.approach-card.purple h4 { color: var(--purple); }
-.approach-card.cta-card h4 { color: var(--text); }
+.approach-card.teal h3 { color: var(--teal-dark); }
+.approach-card.purple h3 { color: var(--purple); }
+.approach-card.cta-card h3 { color: var(--text); }
 .approach-card p {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.65;
 }
+.approach-card.cta-card .btn-gradient { margin-top: 12px; display: inline-block; }
 
 /* =============================================
    SERVICES & FEES PAGE STYLES
