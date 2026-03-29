@@ -1,8 +1,10 @@
 export default async () => {
-  let accepting    = true;
-  let messageText  = 'Krissy is not currently accepting new clients. Existing clients can';
-  let urlText      = 'still book via the portal';
-  let url          = 'https://thecounselingplacepnw.clientsecure.me/sign-in';
+  let accepting        = true;
+  let messageText      = 'Krissy is not currently accepting new clients. Existing clients can';
+  let urlText          = 'still book via the portal';
+  let url              = 'https://thecounselingplacepnw.clientsecure.me/sign-in';
+  let noticeBanner     = false;
+  let noticeBannerText = '';
 
   try {
     const sheetId = Deno.env.get('GOOGLE_SHEET_ID');
@@ -21,12 +23,16 @@ export default async () => {
     messageText = get('messagetext') || messageText;
     urlText     = get('urltext')     || urlText;
     url         = get('url')         || url;
+
+    const noticeBannerVal = get('noticebanner');
+    if (noticeBannerVal !== null) noticeBanner = noticeBannerVal.trim().toLowerCase() === 'true';
+    noticeBannerText = get('noticebannertext') || noticeBannerText;
   } catch (_) {
     // defaults apply if sheet is unreachable
   }
 
   return new Response(
-    JSON.stringify({ acceptingNewPatients: accepting, messageText, urlText, url }),
+    JSON.stringify({ acceptingNewPatients: accepting, messageText, urlText, url, noticeBanner, noticeBannerText }),
     {
       headers: {
         'Content-Type': 'application/json',

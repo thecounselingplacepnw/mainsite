@@ -58,5 +58,13 @@ fetch('/api/status')
         el.textContent = 'Krissy is not currently accepting new clients — contact her to ask about future availability.';
       });
     }
+
+    if (data.noticeBanner && data.noticeBannerText) {
+      const notice = document.getElementById('notice-banner');
+      if (notice) {
+        notice.textContent = data.noticeBannerText;
+        notice.removeAttribute('hidden');
+      }
+    }
   })
   .catch(() => { /* fail silently — default behaviour is accepting */ });
