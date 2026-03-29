@@ -50,15 +50,15 @@
   text-decoration: underline;
 }
 
-/* ── NOTICE BANNER (rose — vacation / office closure) ── */
+/* ── NOTICE BANNER (blue — vacation / office closure) ── */
 .notice-banner {
-  background: #fff1f2;
-  border-bottom: 1px solid #fb7185;
+  background: #eff6ff;
+  border-bottom: 1px solid #60a5fa;
   padding: 10px 24px;
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: #9f1239;
+  color: #1e40af;
   line-height: 1.5;
 }
 
