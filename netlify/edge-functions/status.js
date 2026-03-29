@@ -15,7 +15,7 @@ export default async () => {
     debug.rows   = data.values || [];
     debug.error  = data.error  || null;
 
-    const row = debug.rows.find(r => r[0] === 'accepting_new_patients');
+    const row = debug.rows.find(r => r[0].toLowerCase() === 'accepting_new_patients');
     debug.matchedRow = row || null;
     if (row) accepting = row[1].trim().toLowerCase() !== 'false';
   } catch (e) {
