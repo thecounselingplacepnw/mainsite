@@ -1,32 +1,32 @@
 export default async () => {
-  let accepting = true;
-  let debug = {};
+  let accepting    = true;
+  let messageText  = 'Krissy is not currently accepting new clients. Existing clients can';
+  let urlText      = 'still book via the portal';
+  let url          = 'https://thecounselingplacepnw.clientsecure.me/sign-in';
 
   try {
     const sheetId = Deno.env.get('GOOGLE_SHEET_ID');
     const apiKey  = Deno.env.get('GOOGLE_SHEETS_API_KEY');
-    debug.sheetId = sheetId ? sheetId.slice(0, 8) + '...' : 'MISSING';
-    debug.apiKey  = apiKey  ? apiKey.slice(0, 6)  + '...' : 'MISSING';
+    const res     = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1!A:B?key=${apiKey}`);
+    const data    = await res.json();
+    const rows    = data.values || [];
 
-    const url  = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1!A:B?key=${apiKey}`;
-    const res  = await fetch(url);
-    const data = await res.json();
-    debug.status = res.status;
-    debug.rows   = data.values || [];
-    debug.error  = data.error  || null;
+    const get = key => {
+      const row = rows.find(r => r[0].toLowerCase() === key.toLowerCase());
+      return row ? row[1] : null;
+    };
 
-    const row = debug.rows.find(r => r[0].toLowerCase() === 'accepting_new_patients');
-    debug.matchedRow = row || null;
-    if (row) accepting = row[1].trim().toLowerCase() !== 'false';
-  } catch (e) {
-    debug.exception = e.message;
-    console.error('[status] fetch failed:', e.message);
+    const acceptingVal = get('accepting_new_patients');
+    if (acceptingVal !== null) accepting = acceptingVal.trim().toLowerCase() !== 'false';
+    messageText = get('messagetext') || messageText;
+    urlText     = get('urltext')     || urlText;
+    url         = get('url')         || url;
+  } catch (_) {
+    // defaults apply if sheet is unreachable
   }
 
-  console.log('[status] result:', JSON.stringify({ accepting, ...debug }));
-
   return new Response(
-    JSON.stringify({ acceptingNewPatients: accepting, debug }),
+    JSON.stringify({ acceptingNewPatients: accepting, messageText, urlText, url }),
     {
       headers: {
         'Content-Type': 'application/json',

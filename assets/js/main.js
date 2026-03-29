@@ -42,7 +42,10 @@ fetch('/api/status')
   .then(data => {
     if (!data.acceptingNewPatients) {
       const banner = document.getElementById('status-banner');
-      if (banner) banner.removeAttribute('hidden');
+      if (banner) {
+        banner.innerHTML = `${data.messageText} <a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.urlText}</a>.`;
+        banner.removeAttribute('hidden');
+      }
 
       document.querySelectorAll('.free-consult-cta').forEach(link => {
         link.textContent = 'Send a message \u2192';
