@@ -1141,9 +1141,6 @@ h1, h2, h3, h4 {
   margin-bottom: 24px;
 }
 .spwidget-button-wrapper { text-align: left; }
-.booking-widget-block .spwidget-button {
-  all: unset;
-}
 .contact-or-divider {
   display: flex;
   align-items: center;
