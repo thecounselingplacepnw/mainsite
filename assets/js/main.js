@@ -79,6 +79,16 @@ fetch('/api/status')
       document.querySelectorAll('.new-patient-text').forEach(el => {
         el.textContent = 'Krissy is not currently accepting new clients — contact her to ask about future availability.';
       });
+
+      // Hide contact widgets and show not-accepting message instead
+      const widgets = document.getElementById('contact-widgets');
+      const notAccepting = document.getElementById('contact-not-accepting');
+      const notAcceptingMsg = document.getElementById('contact-not-accepting-msg');
+      if (widgets && notAccepting && notAcceptingMsg) {
+        widgets.setAttribute('hidden', '');
+        notAcceptingMsg.innerHTML = `${data.messageText} <a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.urlText}</a>.`;
+        notAccepting.removeAttribute('hidden');
+      }
     }
 
     if (data.noticeBanner && data.noticeBannerText) {

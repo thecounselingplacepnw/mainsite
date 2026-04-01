@@ -84,23 +84,35 @@
   <!-- Form Panel -->
   <div class="contact-form-panel">
 
-    <!-- SIMPLEPRACTICE BOOKING WIDGET -->
-    <div class="booking-widget-block">
-      <h2>Book an appointment</h2>
-      <p class="form-intro">Schedule directly through the client portal — availability updates on a rolling basis.</p>
-      <div class="spwidget-button-wrapper">
-        <a href="https://thecounselingplacepnw.clientsecure.me" class="spwidget-button btn-gradient free-consult-cta" data-spwidget-scope-id="2ad3ca2c-6738-4d9c-84cd-2c2ef05c8749" data-spwidget-scope-uri="thecounselingplacepnw" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind target="_blank" rel="noopener">Request Appointment &rarr;</a>
-      </div>
+    <!-- NOT ACCEPTING MESSAGE (shown when not accepting new patients) -->
+    <div id="contact-not-accepting" class="contact-not-accepting" hidden>
+      <div class="not-accepting-icon">🌿</div>
+      <h2>Not currently accepting new clients</h2>
+      <p id="contact-not-accepting-msg"></p>
     </div>
-    <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
 
-    <div class="contact-or-divider"><span>or</span></div>
+    <!-- WIDGETS (hidden when not accepting new patients) -->
+    <div id="contact-widgets">
 
-    <!-- CONTACT FORM OVERLAY -->
-    <div class="booking-widget-block">
-      <h2>Send a message</h2>
-      <p class="form-intro">Not ready to book yet? Reach out directly — no pressure, just a conversation starter.</p>
-      <button class="btn-gradient" id="contact-form-btn">Send a Message &rarr;</button>
+      <!-- SIMPLEPRACTICE BOOKING WIDGET -->
+      <div class="booking-widget-block">
+        <h2>Book an appointment</h2>
+        <p class="form-intro">Schedule directly through the client portal — availability updates on a rolling basis.</p>
+        <div class="spwidget-button-wrapper">
+          <a href="https://thecounselingplacepnw.clientsecure.me" class="spwidget-button btn-gradient free-consult-cta" data-spwidget-scope-id="2ad3ca2c-6738-4d9c-84cd-2c2ef05c8749" data-spwidget-scope-uri="thecounselingplacepnw" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind target="_blank" rel="noopener">Request Appointment &rarr;</a>
+        </div>
+      </div>
+      <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js"></script>
+
+      <div class="contact-or-divider"><span>or</span></div>
+
+      <!-- CONTACT FORM OVERLAY -->
+      <div class="booking-widget-block">
+        <h2>Send a message</h2>
+        <p class="form-intro">Not ready to book yet? Reach out directly — no pressure, just a conversation starter.</p>
+        <button class="btn-gradient" id="contact-form-btn">Send a Message &rarr;</button>
+      </div>
+
     </div>
   </div>
 </div>
