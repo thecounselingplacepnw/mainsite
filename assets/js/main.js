@@ -77,7 +77,11 @@ fetch('/api/status')
       });
 
       document.querySelectorAll('.new-patient-text').forEach(el => {
-        el.textContent = 'Krissy is not currently accepting new clients — contact her to ask about future availability.';
+        el.textContent = 'Krissy is not currently accepting new clients — Check back weekly to see if availability has changed.';
+      });
+
+      document.querySelectorAll('.cta-send-message').forEach(el => {
+        el.setAttribute('hidden', '');
       });
 
       // Hide contact widgets and show not-accepting message instead
