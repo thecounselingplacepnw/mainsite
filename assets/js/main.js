@@ -1,3 +1,25 @@
+/* ── CONTACT FORM MODAL ── */
+const contactFormBtn   = document.getElementById('contact-form-btn');
+const contactFormModal = document.getElementById('contact-form-modal');
+const contactFormClose = document.getElementById('contact-form-close');
+
+if (contactFormBtn && contactFormModal) {
+  contactFormBtn.addEventListener('click', () => {
+    contactFormModal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+  contactFormClose.addEventListener('click', () => {
+    contactFormModal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  });
+  contactFormModal.addEventListener('click', e => {
+    if (e.target === contactFormModal) {
+      contactFormModal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 /* ── MOBILE NAV TOGGLE ── */
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks  = document.querySelector('.nav-links');

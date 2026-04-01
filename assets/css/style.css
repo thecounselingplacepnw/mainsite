@@ -1152,6 +1152,48 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+/* ── CONTACT FORM MODAL ── */
+.sp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.sp-modal-overlay[hidden] { display: none; }
+.sp-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 80vh;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.sp-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(0,0,0,0.12);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sp-modal-close:hover { background: rgba(0,0,0,0.22); }
+
 .contact-or-divider::before,
 .contact-or-divider::after {
   content: '';
