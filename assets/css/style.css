@@ -308,6 +308,11 @@ h1, h2, h3, h4 {
   position: relative;
   z-index: 2;
   max-width: 640px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 12px;
+  padding: 28px 36px;
 }
 .page-banner .eyebrow {
   font-family: 'Inter', sans-serif;
@@ -446,6 +451,14 @@ h1, h2, h3, h4 {
   z-index: 2;
   padding: 0 80px 80px;
   max-width: 680px;
+}
+.hero-content-inner {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 12px;
+  padding: 32px 40px;
+  display: inline-block;
 }
 .hero-tag {
   display: inline-flex;
