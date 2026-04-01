@@ -1127,6 +1127,41 @@ h1, h2, h3, h4 {
   padding: 72px 56px;
   background: white;
 }
+.booking-widget-block {
+  background: linear-gradient(135deg, var(--teal-light) 0%, var(--purple-light) 100%);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
+  margin-bottom: 0;
+}
+.booking-widget-block h2 {
+  font-size: clamp(22px, 2.5vw, 28px);
+  margin-bottom: 8px;
+}
+.booking-widget-block .form-intro {
+  margin-bottom: 24px;
+}
+.spwidget-button-wrapper { text-align: left; }
+.booking-widget-block .spwidget-button {
+  all: unset;
+}
+.contact-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.contact-or-divider::before,
+.contact-or-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
 .contact-form-panel h2 {
   font-size: clamp(24px, 3vw, 32px);
   margin-bottom: 8px;
