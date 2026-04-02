@@ -69,18 +69,11 @@ fetch('/api/status')
         banner.removeAttribute('hidden');
       }
 
-      document.querySelectorAll('.free-consult-cta').forEach(link => {
-        link.textContent = 'Send a message \u2192';
-        link.href = 'contact.html';
-        link.removeAttribute('target');
-        link.removeAttribute('rel');
-      });
-
       document.querySelectorAll('.new-patient-text').forEach(el => {
         el.textContent = 'Krissy is not currently accepting new clients — Check back weekly to see if availability has changed.';
       });
 
-      document.querySelectorAll('.cta-send-message').forEach(el => {
+      document.querySelectorAll('.free-consult-cta, .cta-send-message').forEach(el => {
         el.setAttribute('hidden', '');
       });
 
