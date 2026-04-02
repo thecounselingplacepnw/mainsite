@@ -63,21 +63,24 @@ fetch('/api/status')
   .then(r => r.json())
   .then(data => {
     if (!data.acceptingNewPatients) {
+      // Amber status banner
       const banner = document.getElementById('status-banner');
       if (banner) {
         banner.innerHTML = `${data.messageText} <a href="${data.url}" target="_blank" rel="noopener noreferrer">${data.urlText}</a>.`;
         banner.removeAttribute('hidden');
       }
 
+      // Update "new patient" body copy
       document.querySelectorAll('.new-patient-text').forEach(el => {
         el.textContent = 'Krissy is not currently accepting new clients — Check back weekly to see if availability has changed.';
       });
 
+      // Hide all consult/message CTAs site-wide
       document.querySelectorAll('.free-consult-cta, .cta-send-message').forEach(el => {
         el.setAttribute('hidden', '');
       });
 
-      // Hide contact widgets and show not-accepting message instead
+      // Contact page: hide widgets, show not-accepting message
       const widgets = document.getElementById('contact-widgets');
       const notAccepting = document.getElementById('contact-not-accepting');
       const notAcceptingMsg = document.getElementById('contact-not-accepting-msg');
