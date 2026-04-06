@@ -1102,15 +1102,32 @@ h1, h2, h3, h4 {
   margin-top: 2px;
 }
 
-.office-photo {
+.office-slideshow {
   width: 100%;
   height: 200px;
   border-radius: var(--radius-md);
-  background: url('../images/office.jpg') center/cover;
   position: relative;
   overflow: hidden;
   margin-top: 8px;
 }
+@keyframes office-fade {
+  0%        { opacity: 0; }
+  4%, 29%   { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+.office-photo-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: office-fade 18s infinite;
+}
+.office-photo-slide:nth-child(1) { animation-delay: 0s; }
+.office-photo-slide:nth-child(2) { animation-delay: 6s; }
+.office-photo-slide:nth-child(3) { animation-delay: 12s; }
+.office-slideshow:hover .office-photo-slide { animation-play-state: paused; }
+
 .office-photo-caption {
   position: absolute;
   bottom: 10px;
